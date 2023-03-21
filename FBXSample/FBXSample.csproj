@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspose.3D" Version="23.3.0" />
+    <PackageReference Include="AssimpNet" Version="4.1.0" />
+    <PackageReference Include="FbxSharp" Version="0.9.0" />
+    <PackageReference Include="UkooLabs.FbxSharpie" Version="1.0.99" />
+  </ItemGroup>
+
+</Project>
