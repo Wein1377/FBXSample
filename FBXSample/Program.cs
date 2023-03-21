@@ -10,15 +10,18 @@ namespace FBXSample
     {
         static void Main(string[] args)
         {
+            #region Assimp
             AssimpContext importer = new AssimpContext();
-
-            Assimp.Scene model_assimp = importer.ImportFile(file.fbx, PostProcessPreset.TargetRealTimeMaximumQuality);
+            Assimp.Scene model_assimp = importer.ImportFile(@"C:\Users\Nikita\Desktop\source\dinner table set.fbx", PostProcessPreset.TargetRealTimeMaximumQuality);
+            
             foreach(var child in model_assimp.RootNode.Children)
             {
                 var mesh = child.MeshIndices;
             }
+            #endregion
 
-            var model_sharpie = FbxIO.Read(file.fbx);
+            #region FBXSharpie
+            var model_sharpie = FbxIO.Read(@"C:\Users\Nikita\Desktop\source\dinner table set.fbx");
             var geometryIds = model_sharpie.GetGeometryIds();
             foreach (var geometryId in geometryIds)
             {
@@ -39,6 +42,7 @@ namespace FBXSample
                 var hasBinormals = model_sharpie.GetGeometryHasBinormals(geometryId);
                 var hasMaterials = model_sharpie.GetGeometryHasMaterials(geometryId);
             }
+            #endregion
         }
     }
 }
